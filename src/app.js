@@ -19,6 +19,8 @@ app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 
 app.use(express.static("public"));
+
+// helps to parse and extract cookie data from HTTP requests.
 app.use(cookieParser());
 
 //routes import
