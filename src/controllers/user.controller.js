@@ -236,7 +236,7 @@ const changePassword = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Fields are missing");
   }
 
-  const user = await User.findById(req.user?.id);
+  const user = await User.findById(req.user?._id);
 
   const isPasswordCorrect = await user.isPasswordCorrect(oldPassword);
 
